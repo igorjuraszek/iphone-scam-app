@@ -1,0 +1,40 @@
+{{page-title 'Congrats'}}
+
+{{! <div>Gratulacje użytkowniku!!!</div>
+<div>Wygrałeś iPhone 15 Pro Max 128GB!!!</div>
+
+<LinkTo @route='order'>Zamów!!!</LinkTo> }}
+
+{{! <div class='container text-center mt-5'>
+  <div class='alert alert-danger' role='alert'>
+    <h4 class='alert-heading'>Uwaga: Potencjalne Oszustwo!</h4>
+    <p>Gratulacje użytkowniku. Wygrałeś nowego iPhone 15 Oto Max.</p>
+    <hr />
+    <p class='mb-0'>To jest przykładowy komunikat oszustwa. Nigdy nie klikaj w
+      podejrzane linki ani nie udostępniaj swoich danych osobowych na takich
+      stronach.</p>
+  </div>
+</div> }}
+
+<div class='container my-5'>
+  <div class='row justify-content-center'>
+    <div class='col-md-8 text-center'>
+      <img
+        src='iPhone.png'
+        class='img-fluid mb-4'
+        alt='iPhone 15 Pro Max'
+        style='max-width: 300px;'
+      />
+      <h1 class='mb-3'>Gratulacje użytkowniku!</h1>
+      <p class='mb-0'>Wygrałeś nowego <strong>iPhone 15 Pro Max</strong>!</p>
+      <p class='mb-3 text-muted'><small>(to nie jest oszustwo.)</small></p>
+      <button
+        type='button'
+        class='btn btn-success btn-lg'
+        {{on 'click' this.onRedirect}}
+      >Kliknij aby odebrać</button>
+    </div>
+  </div>
+</div>
+
+{{outlet}}

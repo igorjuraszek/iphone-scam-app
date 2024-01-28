@@ -1,0 +1,47 @@
+<form class='align-items-center d-flex flex-column' {{on 'submit' this.onSave}}>
+  {{#each this.schemaFields as |field index|}}
+    <div class='mb-3 w-50'>
+      <label
+        for='input-{{index}}'
+        class='form-label'
+      >{{field.fieldName}}</label>
+      {{log
+        (if
+          (eq field.path 'date')
+          (format-date-to-input (get @model field.propertyName))
+          (get @model field.propertyName)
+        )
+      }}
+      <input
+        data-test-input={{index}}
+        type={{field.path}}
+        class='form-control'
+        id='input-{{index}}'
+        disabled={{@showOnly}}
+        value={{if
+          @showOnly
+          (if
+            (eq field.path 'date')
+            (format-date-to-input (get @model field.propertyName))
+            (get @model field.propertyName)
+          )
+        }}
+        {{on 'input' (fn this.onPropertyChange field.propertyName field.path)}}
+      />
+      <Shared::Form::Error
+        data-test-error={{index}}
+        @errors={{get
+          this.changeset.error
+          (concat field.propertyName '.validation')
+        }}
+      />
+    </div>
+  {{/each}}
+  {{#unless @showOnly}}
+    <button
+      data-test-save-button
+      type='submit'
+      class='btn btn-primary w-25 mt-3'
+    >Save</button>
+  {{/unless}}
+</form>

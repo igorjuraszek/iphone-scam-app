@@ -1,0 +1,44 @@
+{{page-title 'Orders'}}
+
+{{!-- <div>
+  {{#each this.model as |order|}}
+    <div>
+    {{order.id}}
+      {{order.name}}
+      {{order.surname}}
+      {{order.email}}
+      {{order.phoneNumber}}
+      </div>
+  {{/each}}
+</div> --}}
+
+<div class='container mt-5'>
+  <h2 class='mb-4'>Orders</h2>
+  <table class='table'>
+    <thead class='thead-dark'>
+      <tr>
+        <th scope='col'>ID</th>
+        <th scope='col'>Name</th>
+        <th scope='col'>Surname</th>
+        <th scope='col'>Email</th>
+        <th scope='col'>Phone Number</th>
+        <th scope='col'>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each this.model as |order|}}
+        <tr>
+          <th scope='row'>{{order.id}}</th>
+          <td>{{order.name}}</td>
+          <td>{{order.surname}}</td>
+          <td>{{order.email}}</td>
+          <td>{{order.phoneNumber}}</td>
+          <td>
+            <LinkTo @route='admin.order.show' @model={{order}}>Show</LinkTo>
+          </td>
+        </tr>
+      {{/each}}
+
+    </tbody>
+  </table>
+</div>

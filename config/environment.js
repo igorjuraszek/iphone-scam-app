@@ -3,6 +3,7 @@
 module.exports = function (environment) {
   const ENV = {
     modulePrefix: 'iphone-scam-app',
+    podModulePrefix: 'iphone-scam-app/pods',
     environment,
     rootURL: '/',
     locationType: 'history',
