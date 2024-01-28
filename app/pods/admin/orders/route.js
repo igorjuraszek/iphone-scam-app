@@ -5,6 +5,6 @@ export default class AdminOrdersRoute extends Route {
   @service store;
 
   model() {
-    return this.store.findAll('order');
+    return this.store.query('order', {});
   }
 }

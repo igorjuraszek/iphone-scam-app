@@ -34,7 +34,7 @@
           <td>{{order.email}}</td>
           <td>{{order.phoneNumber}}</td>
           <td>
-            <LinkTo @route='admin.order.show' @model={{order}}>Show</LinkTo>
+            <LinkTo @route='admin.order.show' @model={{order.id}}>Show</LinkTo>
           </td>
         </tr>
       {{/each}}
