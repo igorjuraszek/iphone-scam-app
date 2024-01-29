@@ -1,0 +1,47 @@
+<div class='d-flex justify-content-center'>
+  {{#if this.session.currentUser}}
+    <h1>
+      ✅ Logged In
+    </h1>
+  {{else}}
+    <div class='card w-50'>
+      <div class='card-body'>
+        <form>
+          <div class='form-outline mb-4'>
+            <input
+              type='email'
+              id='mail'
+              class='form-control'
+              value={{this.credentials.email}}
+              {{on 'input' (fn this.onPropertyChange 'email')}}
+            />
+            <label class='form-label' for='mail'>Email address</label>
+          </div>
+
+          <div class='form-outline mb-4'>
+            <input
+              type='password'
+              id='password'
+              class='form-control'
+              value={{this.credentials.password}}
+              {{on 'input' (fn this.onPropertyChange 'password')}}
+            />
+            <label class='form-label' for='password'>Password</label>
+          </div>
+
+          <div>
+            <Shared::Form::Error @errors={{array this.errorMessage}} />
+          </div>
+          <div class='d-flex justify-content-end'>
+            <button
+              type='button'
+              class='btn btn-primary btn-block'
+              {{on 'click' this.authenticate}}
+            >Sign in</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  {{/if}}
+</div>

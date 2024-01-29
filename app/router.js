@@ -19,4 +19,5 @@ Router.map(function () {
     });
   });
   this.route('congrats', { path: '/' });
+  this.route('login');
 });

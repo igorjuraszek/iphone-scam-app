@@ -5,13 +5,6 @@
         for='input-{{index}}'
         class='form-label'
       >{{field.fieldName}}</label>
-      {{log
-        (if
-          (eq field.path 'date')
-          (format-date-to-input (get @model field.propertyName))
-          (get @model field.propertyName)
-        )
-      }}
       <input
         data-test-input={{index}}
         type={{field.path}}
