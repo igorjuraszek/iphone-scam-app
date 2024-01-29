@@ -15,6 +15,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:ember/recommended',
     'plugin:prettier/recommended',
+    'plugin:cypress/recommended',
   ],
   env: {
     browser: true,
@@ -53,11 +54,6 @@ module.exports = {
       // test files
       files: ['tests/**/*-test.{js,ts}'],
       extends: ['plugin:qunit/recommended'],
-    },
-    {
-      globals: {
-        cy: true,
-      },
     },
   ],
 };
