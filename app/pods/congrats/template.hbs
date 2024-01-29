@@ -10,13 +10,16 @@
         alt='iPhone 15 Pro Max'
         style='max-width: 300px;'
       />
-      <h1 class='mb-3'>Gratulacje użytkowniku!</h1>
-      <p class='mb-0'>Wygrałeś nowego <strong>iPhone 15 Pro Max</strong>!</p>
-      <p class='mb-3 text-muted'><small>(to nie jest oszustwo.)</small></p>
+      <h1 class='mb-3' data-test-congrats>Gratulacje użytkowniku!</h1>
+      <p class='mb-0' data-test-info>Wygrałeś nowego
+        <strong>iPhone 15 Pro Max</strong>!</p>
+      <p class='mb-3 text-muted' data-test-not-scam><small>(to nie jest
+          oszustwo.)</small></p>
       <button
         type='button'
         class='btn btn-success btn-lg'
         {{on 'click' this.onRedirect}}
+        data-test-order
       >Kliknij aby odebrać</button>
     </div>
   </div>

@@ -20,7 +20,9 @@
     "lint:js:fix": "eslint . --fix",
     "start": "ember serve",
     "test": "npm-run-all --print-name \"lint\" \"test:*\"",
-    "test:ember": "ember test"
+    "test:ember": "ember test",
+    "e2e": "cypress run",
+    "e2e:open": "cypress open"
   },
   "devDependencies": {
     "@ember/optional-features": "^2.0.0",

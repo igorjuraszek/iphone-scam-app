@@ -54,5 +54,10 @@ module.exports = {
       files: ['tests/**/*-test.{js,ts}'],
       extends: ['plugin:qunit/recommended'],
     },
+    {
+      globals: {
+        cy: true,
+      },
+    },
   ],
 };

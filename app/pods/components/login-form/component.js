@@ -5,6 +5,7 @@ import { action } from '@ember/object';
 
 export default class LoginFormComponent extends Component {
   @service session;
+  @service router;
   @service store;
   @tracked errorMessage;
   @tracked password = null;
@@ -26,6 +27,7 @@ export default class LoginFormComponent extends Component {
 
     if (this.session.isAuthenticated) {
       this.setCurrentUser(this.session.data.authenticated.id);
+      this.router.transitionTo('admin');
     }
   }
 
