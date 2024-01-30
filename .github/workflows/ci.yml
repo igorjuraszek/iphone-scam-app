@@ -3,7 +3,7 @@ name: Ember.js CI
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   tests:
