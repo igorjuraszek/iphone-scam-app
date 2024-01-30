@@ -1,0 +1,3 @@
+[submodule "iphone-scam-api"]
+	path = iphone-scam-api
+	url = git@github.com:igorjuraszek/iphone-scam-api.git
