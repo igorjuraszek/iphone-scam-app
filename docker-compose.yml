@@ -1,0 +1,28 @@
+version: '3'
+services:
+  ember_app:
+    build:
+      dockerfile: Dockerfile
+      context: './'
+    ports:
+      - '4200:4200'
+
+  api_app:
+    build:
+      context: ./iphone-scam-api
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./iphone-scam-api:/rails
+    environment:
+      DATABASE_URL: postgres://username:password@db:5432/iphone_scam_api_development
+    depends_on:
+      - db
+
+  db:
+    image: 'postgres:15-alpine'
+    environment:
+      POSTGRES_USER: username
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: 'iphone_scam_api_development'
