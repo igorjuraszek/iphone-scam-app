@@ -8,6 +8,10 @@ module.exports = function (defaults) {
     sassOptions: {
       includePaths: ['node_modules/bootstrap/scss'],
     },
+
+    'ember-simple-auth': {
+      useSessionSetupMethod: true,
+    },
   });
 
   // Use `app.import` to add additional libraries to the generated
